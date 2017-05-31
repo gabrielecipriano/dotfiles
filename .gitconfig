@@ -1,0 +1,44 @@
+[user]
+    name = Gabriele Cipriano
+    email = gabriele.cipriano@lastminute.com
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    df = diff --color
+    rpull = pull --rebase
+    rmerge = merge --no-ff
+    undo = reset --hard
+    throw = reset --hard HEAD~1
+    oops = commit --amend --reuse-message=HEAD
+    nuke = ! git reset --hard && git clean -fxd
+    fresh = ! git reset --hard && git clean -fd
+    prev = checkout HEAD~
+    d = difftool
+
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  # Commit with branch name surrounded with [] 
+
+    comm = "!f() { \
+        git commit -am \"[$(git symbolic-ref --short HEAD)] $1\" ; \
+        }; f"
+
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+[merge]
+    tool = vimdiff
+[diff]
+    tool = vimdiff
+    compactionHeuristic = true
+[branch]
+    autosetupmerge = true
+[push]
+    default = current
+[core]
+    editor = /usr/local/bin/vim
+[difftool]
+    prompt = false 
+    trustExitCode = true
