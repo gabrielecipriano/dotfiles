@@ -113,3 +113,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 #nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# auto-completition
+if [ -x /usr/local/git/bin/git ]; then
+    source ~/.git-completion.bash
+fi
