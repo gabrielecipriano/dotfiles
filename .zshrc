@@ -50,6 +50,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+plugins=(zsh-autosuggestions)
 
 # User configuration
 
@@ -84,11 +85,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 DEFAULT_USER="gcipriano"
 
+
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home"
 export CATALINA_BASE="/Users/gcipriano"
+export PATH=$PATH:/Users/gcipriano/Library/Android/sdk/platform-tools
+# Homebrew
+export PATH=/usr/local/bin:$PATH
 
 #kubectl
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+
+alias mysqldump='/Applications/MySQLWorkbench.app/Contents/MacOS/mysqldump'
 
 function workon { source ../.virtualenvs/"$1"/bin/activate}
 
@@ -96,10 +103,10 @@ alias watch='watch '
 
 function kube
 {
-    kubectl --context=evo-$2 get pods --namespace=$1-$2 -o wide 
+    echo "executing kubectl --context=evo-$2 --namespace=$1-$2 get deployments,pods  -o wide"
+    kubectl --context=evo-$2 --namespace=$1-$2 get deployments,pods  -o wide 
 }
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 
