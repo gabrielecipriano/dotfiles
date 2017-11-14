@@ -872,7 +872,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>115 64 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>296 426 796 473 0 0 1440 900 </string>
+	<string>296 403 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>3 406 665 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1785,6 +1785,10 @@
 	<string>5774259C-E6FA-4EF5-85D8-9FECE55D2296</string>
 	<key>NoSyncLastTipTime</key>
 	<real>494332115.11217201</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncSilenceAnnoyingBellAutomatically</key>
