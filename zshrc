@@ -121,3 +121,16 @@ fi
 
 # zsh-syntax-highlighting
 source /Users/gcipriano/Utilities/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#managing multiple git emails for commits
+alias git='GIT_AUTHOR_EMAIL=$(
+      p=$(pwd)
+      while [[ $p != "$HOME" ]]; do
+        [ -e $p/.gitemail ] && cat $p/.gitemail && break
+        p=$(dirname $p)
+      done) GIT_COMMITTER_EMAIL=$(
+      p=$(pwd)
+      while [[ $p != "$HOME" ]]; do
+        [ -e $p/.gitemail ] && cat $p/.gitemail && break
+        p=$(dirname $p)
+      done) /usr/bin/git'
