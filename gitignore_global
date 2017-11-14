@@ -1,0 +1,17 @@
+.DS_Store
+.DS_Store?
+Thumbs.db
+*.swp
+*~
+.project
+tags
+log/
+db/*.sqlite3
+.bundle
+.env
+tmp/
+config/local_env.yml
+Session.vim
+.powenv
+node_modules/
+*.local
