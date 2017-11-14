@@ -15,7 +15,7 @@ dotfiles_echo() {
 
 set -e # Terminate script if anything exits with a non-zero value
 
-DOTFILES_DIR=$HOME/dev/dotfiles
+DOTFILES_DIR=$HOME/.dotfiles
 VIM_DIR=$DOTFILES_DIR/vim
 
 files=(
