@@ -118,3 +118,6 @@ source $(brew --prefix nvm)/nvm.sh
 if [ -x /usr/local/git/bin/git ]; then
     source ~/.git-completion.bash
 fi
+
+# zsh-syntax-highlighting
+source /Users/gcipriano/Utilities/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
