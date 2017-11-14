@@ -1,0 +1,20 @@
+"*":
+  "asciidoc-preview":
+    compatMode: true
+    scrollMode: false
+    skipFrontMatter: false
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontSize: 16
+  "exception-reporting":
+    userId: "c284eab3-006d-3d68-d2ce-f968d4ae3b61"
+  tablr:
+    csvEditor:
+      columnDelimiter: ";"
+  welcome:
+    showOnStartup: false
