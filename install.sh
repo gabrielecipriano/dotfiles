@@ -15,6 +15,9 @@ dotfiles_echo() {
 
 set -e # Terminate script if anything exits with a non-zero value
 
+dotfiles_echo "update dotfiles..."
+git pull
+
 DOTFILES_DIR=$HOME/.dotfiles
 VIM_DIR=$DOTFILES_DIR/vim
 
