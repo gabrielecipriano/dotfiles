@@ -41,10 +41,5 @@ done
 dotfiles_echo "-> Linking $DOTFILES_DIR/Brewfile to $HOME/Brewfile..."
 ln -nfs "$DOTFILES_DIR"/Brewfile "$HOME"/Brewfile
 
-if [ -d "$HOME"/.vim/ftplugin ]; then
-  rm -rf "$HOME"/.vim/ftplugin
-fi
-ln -nfs "$VIM_DIR"/ftplugin "$HOME"/.vim/ftplugin
-
 dotfiles_echo "Dotfiles installation complete!"
 dotfiles_echo "Complete Brew Bundle installation with 'brew bundle install -v --global'"
