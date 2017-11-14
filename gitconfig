@@ -19,17 +19,11 @@
     prev = checkout HEAD~
     d = difftool
     wch = whatchanged -p --abbrev-commit --pretty=medium -10
-
-  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-  # Commit with branch name surrounded with [] 
-
     comm = "!f() { \
         git commit -am \"[$(git symbolic-ref --short HEAD)] $1\" ; \
         }; f"
 	p = push
 
-  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 [core]
   excludesfile = ~/.gitignore_global
 
