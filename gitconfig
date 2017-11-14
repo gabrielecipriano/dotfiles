@@ -18,6 +18,7 @@
     fresh = ! git reset --hard && git clean -fd
     prev = checkout HEAD~
     d = difftool
+    wch = whatchanged -p --abbrev-commit --pretty=medium -10
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
