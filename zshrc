@@ -122,7 +122,17 @@ fi
 # zsh-syntax-highlighting
 source /Users/gcipriano/Utilities/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#managing multiple git emails for commits
+# Managing multiple git emails for commits
+# setup a .gitemail file and all your git subfolders
+# will commit with the email specified in the fail
+# 
+# for example 
+# 
+# work/.gitemail johnny.stecchino@awesomecompany.com
+# personal/.gitemail johnny.stecchino@gmail.com
+#
+# thanks to @pithyless https://stackoverflow.com/questions/8337071/different-gitconfig-for-a-given-subdirectory
+#
 alias git='GIT_AUTHOR_EMAIL=$(
       p=$(pwd)
       while [[ $p != "$HOME" ]]; do
