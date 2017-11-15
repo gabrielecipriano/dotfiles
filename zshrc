@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/gcipriano/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -87,8 +87,8 @@ DEFAULT_USER="gcipriano"
 
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home"
-export CATALINA_BASE="/Users/gcipriano"
-export PATH=$PATH:/Users/gcipriano/Library/Android/sdk/platform-tools
+export CATALINA_BASE=$HOME
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 # Homebrew
 export PATH=/usr/local/bin:$PATH
 
@@ -120,7 +120,7 @@ if [ -x /usr/local/git/bin/git ]; then
 fi
 
 # zsh-syntax-highlighting
-source /Users/gcipriano/Utilities/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/Utilities/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Managing multiple git emails for commits
 # setup a .gitemail file and all your git subfolders
