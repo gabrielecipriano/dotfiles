@@ -24,6 +24,8 @@ brew cask install spotify
 brew cask install intellij-idea-ce
 brew cask install slack
 brew cask install caskroom/versions/java8
+brew cask install visual-studio
+brew cask install visual-studio-code
 
 brew cleanup
 brew prune
