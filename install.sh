@@ -24,9 +24,7 @@ VIM_DIR=$DOTFILES_DIR/vim
 files=(
 "gitconfig"
 "gitignore_global"
-"vimrc"
 "zshrc"
-"atom"
 )
 
 dotfiles_echo "Installing dotfiles..."

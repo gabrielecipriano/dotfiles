@@ -81,44 +81,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 DEFAULT_USER="gcipriano"
 
-
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home"
 export CATALINA_BASE=$HOME
-export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 # Homebrew
 export PATH=/usr/local/bin:$PATH
 
-#kubectl
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-
-alias mysqldump='/Applications/MySQLWorkbench.app/Contents/MacOS/mysqldump'
-
-function workon { source ../.virtualenvs/"$1"/bin/activate}
-
-alias watch='watch '
-
-function kube
-{
-    echo "executing kubectl --context=evo-$2 --namespace=$1-$2 get deployments,pods  -o wide"
-    kubectl --context=evo-$2 --namespace=$1-$2 get deployments,pods  -o wide 
-}
-
-export PATH="$PATH:$HOME/.rvm/bin"
-
-
-#nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-# auto-completition
-if [ -x /usr/local/git/bin/git ]; then
-    source ~/.git-completion.bash
-fi
-
-# zsh-syntax-highlighting
-source $HOME/Utilities/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Managing multiple git emails for commits
 # setup a .gitemail file and all your git subfolders
 # will commit with the email specified in the fail
 # 
