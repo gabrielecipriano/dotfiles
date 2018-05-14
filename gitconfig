@@ -23,7 +23,7 @@
         git commit -am \"[$(git symbolic-ref --short HEAD)] $1\" ; \
         }; f"
 	p = push
-    last = ! git log -1 --pretty=%B | cowsay -f dragon-and-cow  
+    last = ! git log -1 --pretty=%B | cowsay -f dragon-and-cow | lolcat  
 
 [core]
   excludesfile = ~/.gitignore_global

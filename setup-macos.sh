@@ -21,6 +21,8 @@ brew install \
   ruby \
   elixir \
   haskell-stack \
+  cowsay \
+  lolcat \
   git
 
 brew cask install docker
