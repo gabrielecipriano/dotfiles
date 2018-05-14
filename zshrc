@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 DEFAULT_USER="gcipriano"
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home"
 export CATALINA_BASE=$HOME
 # Homebrew
 export PATH=/usr/local/bin:$PATH
