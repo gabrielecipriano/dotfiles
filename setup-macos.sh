@@ -14,6 +14,7 @@ rm -rf fonts
 
 brew install \
   the_silver_searcher \
+  terraform \
   wget \
   watch \
   python \
