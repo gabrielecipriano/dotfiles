@@ -23,6 +23,8 @@ brew install \
   elixir \
   haskell-stack \
   cowsay \
+  httpie \
+  awscli \
   lolcat \
   git
 
