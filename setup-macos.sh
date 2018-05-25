@@ -26,7 +26,8 @@ brew install \
   httpie \
   awscli \
   lolcat \
-  git
+  git \
+  coreutils
 
 brew cask install docker
 brew cask install firefox
