@@ -29,6 +29,7 @@ brew install \
   git
 
 brew cask install docker
+brew cask install firefox
 brew cask install iterm2
 brew cask install spotify
 brew cask install intellij-idea-ce
