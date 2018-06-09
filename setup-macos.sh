@@ -8,10 +8,15 @@ brew uninstall --ignore-dependencies python
 brew unlink python@2
 brew uninstall --ignore-dependencies python@2
 
+brew upgrade \
+    git \
+    wget \
+    coreutils
+
+
 brew install \
   the_silver_searcher \
   terraform \
-  wget \
   watch \
   python \
   python3 \
@@ -21,9 +26,7 @@ brew install \
   cowsay \
   httpie \
   awscli \
-  lolcat \
-  git \
-  coreutils
+  lolcat
 
 brew cask install docker
 brew cask install firefox
