@@ -11,7 +11,7 @@ matrix:
         - os: osx
           osx_image: xcode9.1
 script: 
-    - sudo ./setup-macos.sh
+    - ./setup-macos.sh
 
 git:
     submodules: false
