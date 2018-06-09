@@ -41,3 +41,4 @@ for file in "${files[@]}"; do
 done
 
 dotfiles_echo "Dotfiles installation complete!"
+
