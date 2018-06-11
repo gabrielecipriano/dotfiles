@@ -37,6 +37,8 @@ brew cask install slack
 brew cask install caskroom/versions/java8
 brew cask install visual-studio
 brew cask install visual-studio-code
+brew cask install virtualbox
+brew cask install virtualbox-extension-pack
 
 brew cleanup
 brew prune
