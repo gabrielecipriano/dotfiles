@@ -3,6 +3,8 @@
 #Installing brew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+curl https://sh.rustup.rs -sSf | sh
+
 brew unlink python
 brew uninstall --ignore-dependencies python
 brew unlink python@2
