@@ -28,6 +28,7 @@ brew install \
   cowsay \
   httpie \
   awscli \
+  bat \
   lolcat
 
 brew cask install docker
