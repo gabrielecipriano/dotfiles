@@ -21,3 +21,7 @@ echo "accept the license agreement, and copy the download link of the appropriat
 echo ""
 
 wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "$oracle_java_link"
+
+echo "=== REMAINING STEP ==="
+echo ""
+echo "- Set Solarized Dark as your theme in the terminal emulator"
