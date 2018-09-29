@@ -10,11 +10,12 @@ sudo dnf install -y \
 	zsh \
 	git \
 	xclip \
-	snap \
+	snapd \
 	haskell-platform \
        	util-linux-user \
 	powerline-fonts
 
+sudo snap install spotify
 echo "=== JAVA INSTALLATION =="
 echo "In order to install Oracle JDK visit: "
 echo ""
