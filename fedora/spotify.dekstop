@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Spotify
+Exec=/var/lib/snapd/snap/bin/spotify
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Music;
+X-Desktop-File-Install-Version=0.15
