@@ -7,3 +7,4 @@ vacuum-repo-hard() {
 }
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:/snap/bin"

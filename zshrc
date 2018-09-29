@@ -99,3 +99,4 @@ source $ZSH/oh-my-zsh.sh
 #
 
 DEFAULT_USER='gcipriano'
+source $HOME/.zprofile
