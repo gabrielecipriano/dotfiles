@@ -1,6 +1,6 @@
 [user]
-    name = Gabriele Cipriano
-	email = gabri.cipriano@gmail.com 
+    name = "Gabriele Cipriano"
+    email = gabri.cipriano@gmail.com 
 [alias]
     st = status
     co = checkout
@@ -36,8 +36,6 @@
     autosetupmerge = true
 [push]
     default = current
-[core]
-    editor = /usr/local/bin/vim
 [difftool]
     prompt = false 
     trustExitCode = true
