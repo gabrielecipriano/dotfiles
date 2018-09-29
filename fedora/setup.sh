@@ -22,9 +22,8 @@ sudo dnf install -y \
 sudo snap install spotify 
 
 $self/setup-java.sh
-sudo cp $self/spotify.desktop /usr/share/applications
-
 $parent/symlinks.sh
+
 echo "=== REMAINING STEP ==="
 echo ""
 echo "- Set Solarized Dark as your theme in the terminal emulator"
