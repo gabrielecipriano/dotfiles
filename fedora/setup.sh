@@ -13,11 +13,14 @@ sudo dnf install -y \
 	git \
 	xclip \
 	snapd \
+	chromium \
 	haskell-platform \
        	util-linux-user \
 	powerline-fonts
 
-sudo snap install spotify
+sudo snap install spotify 
+
+	
 
 $self/setup-java.sh
 
@@ -25,3 +28,4 @@ echo "=== REMAINING STEP ==="
 echo ""
 echo "- Set Solarized Dark as your theme in the terminal emulator"
 echo "- chsh to zsh"
+echo "- Run intellij-idea-community-from the command line to setup the IDE"

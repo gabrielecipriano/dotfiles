@@ -1,3 +1,8 @@
+#!/bin/bash
+
+echo "=== INSTALLING INTELLIJ-IDEA COMMUNITY EDITION"
+sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install --classic --edge intellij-idea-community 
 
 function installJava() {
 	echo ""
