@@ -25,3 +25,4 @@ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2F
 echo "=== REMAINING STEP ==="
 echo ""
 echo "- Set Solarized Dark as your theme in the terminal emulator"
+echo "- chsh to zsh"
