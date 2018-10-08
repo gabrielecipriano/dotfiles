@@ -13,17 +13,16 @@ sudo apt-get install \
 	xclip \
 	snapd \
 	haskell-platform \
+	fonts-powerline \
 
 chsh -s $(which zsh)
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-$self/setup-vscode.sh
 $parent/symlinks.sh
 
 echo "=== REMAINING STEP ==="
 echo ""
 echo "- install powerline fonts"
 echo "- Set Solarized Dark as your theme in the terminal emulator"
-echo "- Run intellij-idea-community-from the command line to setup the IDE"
 echo "- Reboot the system"
