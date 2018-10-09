@@ -4,10 +4,9 @@ self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$self/ask-for.sh"
 source "$self/install-github-release.sh"
 
-
-function installBat() {
-	installGithubRelease "v0.7.1/bat_0.7.1_amd64" "sharkdp/bat"
+function installRipgrep() {
+	installGithubRelease "0.10.0/ripgrep_0.10.0_amd64" "BurntSushi/ripgrep"
 }
 
-ask-for "bat" "installBat"
+ask-for "ripgrep" "installRipgrep"
 
