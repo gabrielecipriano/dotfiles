@@ -15,9 +15,9 @@ sudo apt-get install \
 	haskell-platform \
 	fonts-powerline \
 
-chsh -s $(which zsh)
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+sudo dpkg-reconfigure keyboard-configuration
 
 $parent/symlinks.sh
 
