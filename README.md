@@ -15,4 +15,3 @@ install:
     git clone git@github.com:gabrielecipriano/dotfiles.git .dotfiles
     cd .dotfiles
     ./setup.sh
-    # or /macosx/.. or /fedora/..
