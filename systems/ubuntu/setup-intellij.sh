@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 function installIntellij() {
 	default_version='2018.2.4'
 	echo ""
@@ -22,13 +20,7 @@ function installIntellij() {
 	rm -f *.tar.gz
 }
 
-read -p "Do you wish to install intellij (y/n)? " answer
-case ${answer:0:1} in
-    y|Y )
-	installIntellij
-    ;;
-    * )
-        echo "Skipping intellij installation"
-    ;;
-esac
+self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$self/ask-for.sh"
 
+ask-for "intellij" "installIntellij"

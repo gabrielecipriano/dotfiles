@@ -1,6 +1,5 @@
 #!/bin/bash
 
-self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function installSpotify() {
 	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
@@ -14,7 +13,7 @@ function installSpotify() {
 	sudo sed -i 's/Exec=spotify %U/Exec=spotify --force-device-scale-factor=2 %U/g' /usr/share/applications/spotify.desktop
 }
 
+self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$self/ask-for.sh"
-
 
 ask-for "spotify" "installSpotify"
