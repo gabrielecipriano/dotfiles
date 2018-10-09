@@ -11,12 +11,14 @@ sudo apt-get install \
 	zsh \
 	git \
 	xclip \
+	docker \
+	cowsay \
+	lolcat \
 	haskell-platform \
 	fonts-powerline \
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-sudo dpkg-reconfigure keyboard-configuration
+curl https://sh.rustup.rs -sSf | sh
 
 $self/install-customs.sh
 
