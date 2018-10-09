@@ -2,8 +2,8 @@
 
 
 
-function installSlack() {
-	default_version='3.3.3'
+function installBat() {
+	default_version='v0.7.1/bat_0.7.1_amd64'
 	echo ""
 	echo ""
 
@@ -13,7 +13,7 @@ function installSlack() {
 		version="$default_version"
 	fi
 	
-        wget "https://downloads.slack-edge.com/linux_releases/slack-desktop-$version-amd64.deb"
+        wget "https://github.com/sharkdp/bat/releases/download/$version.deb"
 
         sudo dpkg -i *.deb
         sudo apt-get install -f 
@@ -23,4 +23,4 @@ function installSlack() {
 self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$self/ask-for.sh"
 
-ask-for "slack" "installSlack"
+ask-for "bat" "installBat"
