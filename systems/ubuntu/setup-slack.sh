@@ -20,13 +20,7 @@ function installSlack() {
 	rm -f *.db
 }
 
-read -p "Do you wish to install slack (y/n)? " answer
-case ${answer:0:1} in
-    y|Y )
-	installSlack	
-    ;;
-    * )
-        echo "Skipping slack installation"
-    ;;
-esac
+self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$self/ask-for.sh"
 
+ask-for "slack" "installSlack"
