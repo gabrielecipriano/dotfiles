@@ -11,7 +11,6 @@ sudo apt-get install \
 	zsh \
 	git \
 	xclip \
-	snapd \
 	haskell-platform \
 	fonts-powerline \
 
