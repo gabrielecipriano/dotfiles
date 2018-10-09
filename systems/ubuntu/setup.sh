@@ -1,7 +1,7 @@
 #!/bin/bash
 
 self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-parent=`realpath $self/../`
+root_folder=`realpath $self/../../`
 
 sudo apt-get update
 sudo apt-get upgrade
@@ -19,8 +19,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 sudo dpkg-reconfigure keyboard-configuration
 
-$parent/setup-intellij.sh
-$parent/symlinks.sh
+$self/setup-intellij.sh
+$root_folder/symlinks.sh
 
 echo "=== REMAINING STEP ==="
 echo ""
