@@ -19,6 +19,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 sudo dpkg-reconfigure keyboard-configuration
 
+$parent/setup-intellij.sh
 $parent/symlinks.sh
 
 echo "=== REMAINING STEP ==="
