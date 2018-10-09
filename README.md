@@ -12,7 +12,7 @@ install:
     
     # assign generated ssh key to your github profile
 
-    git clone git@github.com:cyplo/dotfiles.git
-    cd dotfiles
+    git clone git@github.com:gabrielecipriano/dotfiles.git .dotfiles
+    cd .dotfiles
     ./ubuntu/setup.sh
     # or /macosx/.. or /fedora/..
