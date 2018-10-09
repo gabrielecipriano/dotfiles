@@ -20,6 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 sudo dpkg-reconfigure keyboard-configuration
 
 $self/setup-intellij.sh
+$self/setup-slack.sh
 $root_folder/symlinks.sh
 
 echo "=== REMAINING STEP ==="
