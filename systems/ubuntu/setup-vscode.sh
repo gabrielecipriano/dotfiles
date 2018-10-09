@@ -1,5 +1,24 @@
 #!/bin/bash
 
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+function installVscode() {
+	echo ""
+	echo "In order to install Visual Studio Code visit: "
+	echo ""
+	echo "https://code.visualstudio.com/docs/?dv=linux64_deb"
+	echo ""
+	echo "Copy the download link"
+	echo ""
+
+	read -p "Link: " download_link 
+	package_name="vscode.deb"
+        wget -O "$package_name" "$download_link"
+
+        sudo dpkg -i "$package_name"
+        sudo apt-get install -f 
+	rm -f  "$package_name"
+}
+
+self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$self/ask-for.sh"
+
+ask-for "Visual Studio Code" "installVscode"
