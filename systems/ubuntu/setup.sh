@@ -15,14 +15,14 @@ sudo apt-get install \
 	haskell-platform \
 	fonts-powerline \
 
-snap install spotify
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 sudo dpkg-reconfigure keyboard-configuration
 
 $self/setup-intellij.sh
 $self/setup-slack.sh
+$self/setup-spotify.sh
+
 $root_folder/symlinks.sh
 
 echo "=== REMAINING STEP ==="
