@@ -23,6 +23,5 @@ $parent/symlinks.sh
 
 echo "=== REMAINING STEP ==="
 echo ""
-echo "- install powerline fonts"
 echo "- Set Solarized Dark as your theme in the terminal emulator"
 echo "- Reboot the system"
