@@ -1,4 +1,4 @@
-My common dotfiles for Linux Mint, Fedora, Mac
+My common dotfiles for Ubuntu, Fedora, Mac
 
 e.g. my vim, terminal and font configs.
 
