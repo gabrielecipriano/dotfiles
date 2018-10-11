@@ -11,16 +11,18 @@ sudo apt-get install \
 	zsh \
 	git \
 	xclip \
+	docker \
+	node \
+	npm \
+	cowsay \
+	lolcat \
 	haskell-platform \
 	fonts-powerline \
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl https://sh.rustup.rs -sSf | sh
 
-sudo dpkg-reconfigure keyboard-configuration
-
-$self/setup-intellij.sh
-$self/setup-slack.sh
-$self/setup-spotify.sh
+$self/install-customs.sh
 
 $root_folder/symlinks.sh
 

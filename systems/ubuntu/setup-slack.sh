@@ -17,7 +17,7 @@ function installSlack() {
 
         sudo dpkg -i *.deb
         sudo apt-get install -f 
-	rm -f *.db
+	rm -f *.deb
 }
 
 self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
