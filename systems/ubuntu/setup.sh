@@ -12,6 +12,8 @@ sudo apt-get install \
 	git \
 	xclip \
 	docker \
+	node \
+	npm \
 	cowsay \
 	lolcat \
 	haskell-platform \
