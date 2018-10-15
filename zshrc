@@ -100,3 +100,7 @@ source $ZSH/oh-my-zsh.sh
 
 DEFAULT_USER='gcipriano'
 source $HOME/.zprofile
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/gcipriano/.sdkman"
+[[ -s "/home/gcipriano/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gcipriano/.sdkman/bin/sdkman-init.sh"
