@@ -20,7 +20,10 @@ sudo apt-get install \
 	haskell-platform \
 	fonts-powerline \
 
+#OH-MY-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+#rust
 curl https://sh.rustup.rs -sSf | sh
 
 $self/install-customs.sh
