@@ -20,13 +20,7 @@ function installJava() {
 	rm jdk-*.rpm
 }
 
-read -p "Do you wish to install oracle-jdk (y/n)? " answer
-case ${answer:0:1} in
-    y|Y )
-	installJava
-    ;;
-    * )
-        echo "Skipping java installation"
-    ;;
-esac
+self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$self/ask-for.sh"
 
+ask-for "java" "installJava"
