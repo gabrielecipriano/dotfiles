@@ -11,6 +11,8 @@ function installTomcat() {
     sudo mkdir -p /opt/tomcat-7
     sudo tar xf *.tar.gz -C /opt/tomcat-7
 
+    sudo ln -s apache-tomcat-$version current
+    echo "export CATALINA_HOME=\"/opt/tomcat-7/current\"" >> ~/.zprofile
 	rm -f *.tar.gz
 }
 

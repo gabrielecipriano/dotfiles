@@ -8,3 +8,4 @@ vacuum-repo-hard() {
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/snap/bin"
+export CATALINA_HOME="/opt/tomcat-7/current"
