@@ -10,6 +10,7 @@ sudo apt-get install \
 	vim \
 	zsh \
 	git \
+	subversion \
 	xclip \
 	docker \
 	node \
