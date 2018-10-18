@@ -3,7 +3,8 @@
 default_version=$1
 directory_name=$2
 app_name=$3
-path="https://download.jetbrains.com/$app_name/$directory_name"
+app_path=$4
+path="https://download.jetbrains.com/$app_path/$directory_name"
 
 function installJetBrainsApp() {
 	echo ""

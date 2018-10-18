@@ -1,9 +1,9 @@
 #!/bin/bash
 
-default_version='2018.2.4'
-directory_name='idea-IC'
+default_version='2018.2.5'
+directory_name='idea-IU'
 app_name='idea'
-app_path='ideaIC'
+app_path='ideaIU'
 
 self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
