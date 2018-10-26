@@ -18,6 +18,7 @@ sudo apt-get install \
 	cowsay \
 	lolcat \
 	haskell-platform \
+	tilix \
 	fonts-powerline \
 
 #OH-MY-ZSH
