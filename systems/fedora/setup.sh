@@ -16,10 +16,11 @@ sudo dnf install -y \
 	snapd \
 	chromium \
 	haskell-platform \
-       	util-linux-user \
+	tilix \
+    util-linux-user \
 	powerline-fonts
 
-sudo snap install spotify 
+sudo snap install spotify
 
 $self/setup-java.sh
 $root_folder/symlinks.sh

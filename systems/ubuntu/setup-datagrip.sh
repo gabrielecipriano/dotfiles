@@ -1,9 +1,9 @@
 #!/bin/bash
 
 default_version='2018.2.4'
-directory_name='idea-IC'
-app_name='idea'
-app_path='ideaIC'
+directory_name='DataGrip'
+app_name='datagrip'
+app_path='datagrip'
 
 self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
