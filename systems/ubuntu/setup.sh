@@ -2,6 +2,7 @@
 
 self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 root_folder=`realpath $self/../../`
+source $root_folder/utils.sh
 
 sudo apt-get update
 sudo apt-get upgrade
@@ -31,7 +32,8 @@ $self/install-customs.sh
 
 $root_folder/symlinks.sh
 
-echo "=== REMAINING STEP ==="
-echo ""
-echo "- Set Solarized Dark as your theme in the terminal emulator"
-echo "- Reboot the system"
+defineRemainingSteps <<EOT
+=== REMAINING STEP ===
+- Set Solarized Dark as your theme in the terminal emulator
+- Reboot the system
+EOT
