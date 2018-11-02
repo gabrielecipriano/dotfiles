@@ -4,6 +4,7 @@ self="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 root_folder=`realpath $self/../../`
 source $root_folder/utils.sh
 
+sudo add-apt-repository ppa:ultradvorka/ppa
 sudo apt-get update
 sudo apt-get upgrade
 
@@ -21,6 +22,7 @@ sudo apt-get install \
 	haskell-platform \
 	tilix \
 	fonts-powerline \
+	hstr \
 
 #OH-MY-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
