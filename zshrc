@@ -98,6 +98,29 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+# Managing multiple git emails for commits
+# setup a .gitemail file and all your git subfolders
+# will commit with the email specified in the fail
+#
+# for example
+#
+# work/.gitemail johnny.stecchino@awesomecompany.com
+# personal/.gitemail johnny.stecchino@gmail.com
+#
+# thanks to @pithyless https://stackoverflow.com/questions/8337071/different-gitconfig-for-a-given-subdirectory
+#
+alias git='GIT_AUTHOR_EMAIL=$(
+      p=$(pwd)
+      while [[ $p != "$HOME" ]]; do
+        [ -e $p/.gitemail ] && cat $p/.gitemail && break
+        p=$(dirname $p)
+      done) GIT_COMMITTER_EMAIL=$(
+      p=$(pwd)
+      while [[ $p != "$HOME" ]]; do
+        [ -e $p/.gitemail ] && cat $p/.gitemail && break
+        p=$(dirname $p)
+      done) /usr/bin/git'
+
 DEFAULT_USER='gcipriano'
 source $HOME/.zprofile
 
