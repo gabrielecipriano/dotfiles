@@ -5,7 +5,7 @@ richardwildvacuum-repo() {
 vacuum-repo-hard() {
     git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 }
-
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 source $HOME/.system-custom
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/snap/bin"
