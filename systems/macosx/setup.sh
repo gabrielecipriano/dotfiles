@@ -20,6 +20,7 @@ brew install \
   the_silver_searcher \
   terraform \
   watch \
+  exercism \
   python \
   python3 \
   ruby \
