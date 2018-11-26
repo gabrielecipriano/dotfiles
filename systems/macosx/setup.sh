@@ -31,6 +31,7 @@ brew install \
   cowsay \
   httpie \
   bash \
+  hh \
   awscli \
   bat \
   lolcat
