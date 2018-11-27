@@ -37,6 +37,7 @@ brew install \
   lolcat
 
 brew cask install docker
+brew cask install postman
 brew cask install firefox
 brew cask install iterm2
 brew cask install spotify
