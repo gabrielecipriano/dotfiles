@@ -28,6 +28,7 @@ brew install \
   ruby \
   elixir \
   haskell-stack \
+  sbt \
   cowsay \
   httpie \
   bash \
