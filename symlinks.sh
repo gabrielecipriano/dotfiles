@@ -22,6 +22,7 @@ files=(
 "gitconfig"
 "gitignore_global"
 "zshrc"
+"spacemacs"
 "zprofile"
 )
 
