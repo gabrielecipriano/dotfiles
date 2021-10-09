@@ -14,6 +14,4 @@ read -p "What system do you wish to install:? " system_to_install
 echo "Executing $system_to_install setup files"
 
 $self/systems/$system_to_install/setup.sh
-$self/setup-emails.sh
 $self/setup-common.sh
-
