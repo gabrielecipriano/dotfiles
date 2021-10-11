@@ -1,6 +1,6 @@
 [user]
     name = "Gabriele Cipriano"
-    email = gabri.cipriano@gmail.com 
+    email = gabri.cipriano@gmail.com
 [alias]
     st = status
     co = checkout
@@ -18,17 +18,13 @@
     prev = checkout HEAD~
     d = difftool
     wch = whatchanged -p --abbrev-commit --pretty=medium -10
-    comm = "!f() { \
-        git commit -am \"[$(git symbolic-ref --short HEAD)] $1\" ; \
-        }; f"
-	p = push
-    last = ! git log -1 --pretty=%B | cowsay -f dragon-and-cow | lolcat  
-
+    last = ! git log -1 --pretty=%B | cowsay -f dragon-and-cow | lolcat
 [core]
   excludesfile = ~/.gitignore_global
-
 [merge]
     tool = vimdiff
+[commit]
+    verbose = true
 [diff]
     tool = vimdiff
     compactionHeuristic = true
@@ -37,5 +33,15 @@
 [push]
     default = current
 [difftool]
-    prompt = false 
+    prompt = false
     trustExitCode = true
+[init]
+	templatedir = ~/.git-templates
+[duet "env"]
+	git-author-initials = gc
+	git-author-name = Gabriele Cipriano
+	git-author-email = gcipriano@pivotal.io
+	mtime = 1591258089
+	git-committer-initials = cw
+	git-committer-name = Chris Whitty
+	git-committer-email = cwhitty@pivotal.io

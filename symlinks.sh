@@ -22,8 +22,6 @@ files=(
 "gitconfig"
 "gitignore_global"
 "zshrc"
-"spacemacs"
-"zprofile"
 )
 
 dotfiles_echo "Installing dotfiles..."
