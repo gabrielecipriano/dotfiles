@@ -1,4 +1,4 @@
-# marketplace-dotfiles
+# Dotfiles 
 
 ## Usage
 
@@ -9,9 +9,9 @@
 ## Manual post-install steps
 
 1. Open flycut, shifit -> ensure they start on startup.
-1. Speed up key repeat.
 1. Reload tmux and shell.
 1. Install TPM plugins (in tmux press prefix+I)
-1. `bash-it enable completion git bash-it system` and anything else you want.
-1. `bash-it enable plugin base fzf git` and anything else you want.
 1. `vim-update`. Not all plugins install unless the shell is interactive, for some reason.
+1. git config --global user.name "YOUR NAME"
+1. git config --global user.email "youremail@example.com"
+1. git config --global init.defaultBranch [main|master]
