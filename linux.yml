@@ -1,0 +1,169 @@
+---
+- hosts: all
+  tags: [linux]
+  tasks:
+  - name: add apt key for cf-cli
+    become: true
+    apt_key:
+      url: https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key
+      state: present
+
+  - name: add apt source for cf-cli
+    become: true
+    copy:
+      content: 'deb https://packages.cloudfoundry.org/debian stable main'
+      dest: /etc/apt/sources.list.d/cloudfoundry-cli.list
+
+  - name: add apt key for kubectl
+    become: true
+    apt_key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      state: present
+
+  - name: add apt source for kubectl
+    become: true
+    copy:
+      content: 'deb https://apt.kubernetes.io/ kubernetes-xenial main'
+      dest: /etc/apt/sources.list.d/kubernetes.list
+
+  - name: add golang apt repo
+    become: true
+    apt_repository:
+      repo: ppa:longsleep/golang-backports
+
+  - name: add nvim apt repo
+    become: true
+    apt_repository:
+      repo: ppa:neovim-ppa/stable
+
+  - name: add apt key for nodesource
+    become: true
+    apt_key:
+      url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+      state: present
+
+  - name: add apt source for nodesource
+    become: true
+    copy:
+      content: "deb https://deb.nodesource.com/node_14.x bionic main"
+      dest: /etc/apt/sources.list.d/nodesource.list
+
+  - name: apt update
+    become: true
+    apt:
+      update_cache: true
+
+  - name: install apt packages
+    become: true
+    apt:
+      pkg:
+      - apt-transport-https
+      - build-essential
+      - ca-certificates
+      - cf-cli
+      - cmake
+      - coreutils
+      - curl
+      - direnv
+      - docker.io
+      - fasd
+      - git
+      - go-dep
+      - golang-go
+      - jq
+      - kubectl
+      - lastpass-cli
+      - libreadline-dev
+      - libreadline7
+      - libsqlite3-dev
+      - libssl-dev
+      - libxml2-dev
+      - libxslt1-dev
+      - libyaml-dev
+      - make
+      - neovim
+      - nodejs
+      - openssl
+      - python3-pip
+      - python3-venv
+      - ruby
+      - ruby-dev
+      - silversearcher-ag
+      - sqlite3
+      - tig
+      - tldr
+      - tmate
+      - tmux
+      - tree
+      - unzip
+      - vim
+      - watch
+      - wget
+      - zlib1g-dev
+      - zlibc
+  - name: upgrade apt packages
+    become: true
+    apt:
+      upgrade: safe
+
+  - name: install ripgrep deb package
+    become: true
+    command: bash -c 'curl -LO "https://github.com/BurntSushi/ripgrep/releases/latest/download/ripgrep_$(curl --silent "https://api.github.com/repos/BurntSushi/ripgrep/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)_amd64.deb" && dpkg -i ripgrep_*_amd64.deb && rm ripgrep_*_amd64.deb'
+
+  - name: install bat deb package
+    become: true
+    command: bash -c 'curl -LO "https://github.com/sharkdp/bat/releases/latest/download/bat_$(curl --silent "https://api.github.com/repos/sharkdp/bat/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)_amd64.deb" && dpkg -i bat_*_amd64.deb && rm bat_*_amd64.deb'
+
+  - name: install fd deb package
+    become: true
+    command: bash -c 'curl -LO "https://github.com/sharkdp/fd/releases/latest/download/fd_$(curl --silent "https://api.github.com/repos/sharkdp/fd/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)_amd64.deb" && dpkg -i fd_*_amd64.deb && rm fd_*_amd64.deb'
+  - name: install neovim pip3 package
+
+    pip: name=neovim state=latest executable=pip3
+
+  - name: install python-yq
+    pip: name=yq state=latest executable=pip3
+
+  - name: install git-duet
+    command: bash -c "go get github.com/git-duet/git-duet/..."
+
+  - name: install bosh-cli
+    command: bash -c 'wget "https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-$(curl --silent "https://api.github.com/repos/cloudfoundry/bosh-cli/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)-linux-amd64" -O ~/bin/bosh && chmod +rx ~/bin/bosh'
+
+  - name: install kustomize
+    command: bash -c 'curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash && mv kustomize ~/bin/'
+
+  - name: install kubebuilder
+    command: bash -c 'curl -L "https://go.kubebuilder.io/dl/latest/linux/amd64" | tar -xz -C /tmp/ && mv /tmp/kubebuilder*/bin/kubebuilder ~/bin/ && rm -rf /tmp/kubebuilder*'
+
+  - name: install helm
+    command: bash -c 'curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash'
+
+  - name: install kapp
+    command: bash -c 'wget "https://github.com/k14s/kapp/releases/download/v$(curl --silent "https://api.github.com/repos/k14s/kapp/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)/kapp-linux-amd64" -O ~/bin/kapp && chmod +rx ~/bin/kapp'
+
+  - name: install ytt
+    command: bash -c 'wget "https://github.com/k14s/ytt/releases/download/v$(curl --silent "https://api.github.com/repos/k14s/ytt/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)/ytt-linux-amd64" -O ~/bin/ytt && chmod +rx ~/bin/ytt'
+
+  - name: install kbld
+    command: bash -c 'wget "https://github.com/k14s/kbld/releases/download/v$(curl --silent "https://api.github.com/repos/k14s/kbld/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)/kbld-linux-amd64" -O ~/bin/kbld && chmod +rx ~/bin/kbld'
+
+  - name: install kubens
+    command: bash -c 'wget "https://github.com/ahmetb/kubectx/releases/download/v$(curl --silent "https://api.github.com/repos/ahmetb/kubectx/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)/kubens" -O ~/bin/kubens && chmod +rx ~/bin/kubens'
+
+  - name: install kubectx
+    command: bash -c 'wget "https://github.com/ahmetb/kubectx/releases/download/v$(curl --silent "https://api.github.com/repos/ahmetb/kubectx/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)/kubectx" -O ~/bin/kubectx && chmod +rx ~/bin/kubectx'
+
+  - name: install vendir
+    command: bash -c 'wget "https://github.com/k14s/vendir/releases/download/v$(curl --silent "https://api.github.com/repos/k14s/vendir/releases/latest" | jq -r .tag_name | cut -d "v" -f 2)/vendir-linux-amd64" -O ~/bin/vendir && chmod +rx ~/bin/vendir'
+
+  - name: set up top level symlinks
+    become: true
+    file:
+      path: "{{item.target}}"
+      src: "{{item.src}}"
+      state: link
+      force: yes
+    with_items:
+    - {target: /usr/local/bin/kubectl-export_context , src: "{{ansible_env.PWD}}/config/kubectl-export_context"}
+    - {target: /usr/local/bin/python3 , src: /usr/bin/python3}

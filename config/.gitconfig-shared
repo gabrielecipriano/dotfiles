@@ -1,0 +1,38 @@
+[alias]
+    st = status
+    di = diff
+    co = checkout
+    ci = commit --verbose
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ds = diff --staged
+    undo = reset --hard
+    throw = reset --hard HEAD~1
+    oops = commit --amend --reuse-message=HEAD
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = auto
+[merge]
+    conflictstyle = diff3
+[push]
+    default = simple
+[commit]
+    verbose = true
+    message = ~/.gitmessage
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[url "git@gitlab.eng.vmware.com:"]
+	insteadOf = https://gitlab.eng.vmware.com/
+[http "https://gopkg.in"]
+    followRedirects = true
+[init]
+    templatedir = ~/.git-templates
+[hooks "confirm"]
+    match = FIt(
+    match = FWhen(
+    match = FContext(
+    match = FDescribe(
+[core]
+	excludesfile = ~/.gitignore

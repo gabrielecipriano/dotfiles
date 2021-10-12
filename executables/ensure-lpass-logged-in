@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -eu
+set -o pipefail
+
+: "${WORKSPACE:="$HOME/workspace"}"
+
+[[ -z "${DEBUG:-""}" ]] || set -x
+
+usage() {
+  echo "usage: $0 [--non-interactive]"
+  echo
+  echo "Check if lpass is logged in. If not already logged in, attempt to log in"
+  echo
+  echo "If called with --non-interactive, do not attempt to log in -- just fail."
+}
+
+main() {
+  local username
+
+  if [[ "$#" -eq 0 ]]
+  then
+    interactively_ensure_we_are_logged_in
+    exit 0
+  fi
+
+  if [[ "$1" != "--non-interactive" ]]
+  then
+    fail "$(usage)"
+  fi
+
+  check_status
+}
+
+check_status() {
+  lpass status | grep -q "Logged in as"
+}
+
+interactively_ensure_we_are_logged_in() {
+  if ! check_status
+  then
+    username="gcipriano@pivotal.io"
+    lpass login --trust "${username}" >&2
+  fi
+}
+
+fail() {
+  MESSAGE="$1"
+  echo "$MESSAGE" >&2 && exit 1
+}
+
+main "$@"

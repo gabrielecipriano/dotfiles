@@ -1,0 +1,61 @@
+---
+- hosts: all
+  tags: [macos, linux]
+  tasks:
+  - name: get bash-it
+    git:
+      repo: https://github.com/Bash-it/bash-it.git
+      dest: ~/.bash_it
+      force: true
+
+  - name: install bash-it
+    command: ~/.bash_it/install.sh --silent
+
+  - name: get TPM
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: ~/.tmux/plugins/tpm
+
+  - file: path=~/bin state=directory mode=0755
+
+  - name: install Luan's Neovim distribution
+    git:
+      repo: https://github.com/luan/nvim
+      dest: ~/.config/nvim
+
+  - name: install python support for nvim
+    command: pip3 install --user --upgrade pynvim
+
+  - name: set up user symlinks
+    file:
+      path: "{{item.target}}"
+      src: "{{item.src}}"
+      state: link
+      force: yes
+    with_items:
+    - {target: ~/.bash_it/custom/brew.bash, src: "{{ansible_env.PWD}}/config/bash/brew.bash"}
+    - {target: ~/.bash_it/custom/env.bash, src: "{{ansible_env.PWD}}/config/bash/env.bash"}
+    - {target: ~/.bash_it/custom/git.bash, src: "{{ansible_env.PWD}}/config/bash/git.bash"}
+    - {target: ~/.bash_it/custom/profile.bash, src: "{{ansible_env.PWD}}/config/bash/profile.bash"}
+    - {target: ~/.bash_it/custom/terminal.bash, src: "{{ansible_env.PWD}}/config/bash/terminal.bash"}
+    - {target: ~/.bash_it/themes/bobby/bobby.theme.bash, src: "{{ansible_env.PWD}}/config/bash/bobby-golang.theme.bash"}
+    - {target: ~/.git-authors, src: "{{ansible_env.PWD}}/config/.git-authors"}
+    - {target: ~/.gitconfig-shared, src: "{{ansible_env.PWD}}/config/.gitconfig-shared"}
+    - {target: ~/.gitignore, src: "{{ansible_env.PWD}}/config/.gitignore"}
+    - {target: ~/.ssh/rc, src: "{{ansible_env.PWD}}/executables/ssh.rc"}
+    - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
+    - {target: ~/bin/load-personal-keys, src: "{{ansible_env.PWD}}/executables/load-personal-keys"}
+    - {target: ~/bin/ensure-lpass-logged-in, src: "{{ansible_env.PWD}}/executables/ensure-lpass-logged-in"}
+    - {target: ~/.config/nvim/user/before.vim, src: "{{ansible_env.PWD}}/config/.vimrc.local.before"}
+    - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/.vimrc.local.plugins"}
+    - {target: ~/.config/nvim/user/after.vim, src: "{{ansible_env.PWD}}/config/.vimrc.local"}
+  - name: ~/.gitconfig
+    blockinfile:
+      path: ~/.gitconfig
+      create: yes
+      block: |
+        [include]
+          path = ~/.gitconfig-shared
+
+  - name: install counterfeiter
+    command: bash -c "go get github.com/maxbrunsfeld/counterfeiter"

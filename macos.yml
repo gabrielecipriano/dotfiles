@@ -1,0 +1,82 @@
+---
+- hosts: all
+  tags: [macos]
+  tasks:
+  - name: update brew
+    homebrew: update_homebrew=yes
+
+  - name: add Homebrew taps
+    homebrew_tap: name={{item}}
+    with_items:
+    - homebrew/cask-fonts
+    - git-duet/tap
+    - neovim/neovim
+    - k14s/tap
+
+  - name: install Homebrew packages
+    homebrew:
+      name: "{{item.name}}"
+      install_options: "{{item.install_options}}"
+      state: latest
+    with_items:
+    - {name: ack, install_options: ''}
+    - {name: ag, install_options: ''}
+    - {name: awscli, install_options: ''}
+    - {name: coreutils, install_options: ''}
+    - {name: ctags, install_options: ''}
+    - {name: dep, install_options: ''}
+    - {name: direnv, install_options: ''}
+    - {name: fasd, install_options: ''}
+    - {name: fd, install_options: ''}
+    - {name: fzf, install_options: ''}
+    - {name: git, install_options: ''}
+    - {name: git-duet, install_options: ''}
+    - {name: go, install_options: ''}
+    - {name: htop, install_options: ''}
+    - {name: jq, install_options: ''}
+    - {name: jsonpp, install_options: ''}
+    - {name: kapp, install_options: ''}
+    - {name: kbld, install_options: ''}
+    - {name: kubernetes-helm, install_options: ''}
+    - {name: kubernetes-service-catalog-client, install_options: ''}
+    - {name: lastpass-cli, install_options: ''}
+    - {name: libgit2, install_options: ''}
+    - {name: neovim, install_options: ''}
+    - {name: pstree, install_options: ''}
+    - {name: python, install_options: ''}
+    - {name: python-yq, install_options: ''}
+    - {name: python3, install_options: ''}
+    - {name: rbenv, install_options: ''}
+    - {name: reattach-to-user-namespace, install_options: ''}
+    - {name: ripgrep, install_options: ''}
+    - {name: shellcheck, install_options: ''}
+    - {name: ssh-copy-id, install_options: ''}
+    - {name: sshuttle, install_options: ''}
+    - {name: tealdeer, install_options: ''}
+    - {name: terraform, install_options: ''}
+    - {name: tig, install_options: ''}
+    - {name: tmux, install_options: ''}
+    - {name: tree, install_options: ''}
+    - {name: vendir, install_options: ''}
+    - {name: vim, install_options: ''}
+    - {name: watch, install_options: ''}
+    - {name: wget, install_options: ''}
+    - {name: ytt, install_options: ''}
+
+  - name: install Homebrew casks
+    homebrew_cask: name={{item}} install_options=appdir=/Applications
+    with_items:
+    - flycut
+    - iterm2
+    - jetbrains-toolbox
+    - docker
+    - font-inconsolata
+    - google-cloud-sdk
+    - iterm2
+    - shiftit
+    - vagrant
+    - virtualbox
+    - spotify
+
+  - name: install neovim pip3 package
+    pip: name=neovim state=latest executable=/usr/local/bin/pip3
