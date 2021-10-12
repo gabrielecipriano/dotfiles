@@ -11,7 +11,7 @@
     - homebrew/cask-fonts
     - git-duet/tap
     - neovim/neovim
-    - k14s/tap
+    - vmware-tanzu/carvel
 
   - name: install Homebrew packages
     homebrew:
