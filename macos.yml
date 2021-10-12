@@ -37,6 +37,7 @@
     - {name: jsonpp, install_options: ''}
     - {name: kapp, install_options: ''}
     - {name: kbld, install_options: ''}
+    - {name: kind, install_options: ''}
     - {name: kubernetes-helm, install_options: ''}
     - {name: kubernetes-service-catalog-client, install_options: ''}
     - {name: lastpass-cli, install_options: ''}
