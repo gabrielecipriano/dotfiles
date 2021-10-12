@@ -32,6 +32,7 @@
     - {name: git, install_options: ''}
     - {name: git-duet, install_options: ''}
     - {name: go, install_options: ''}
+    - {name: golangci-lint,install_options: ''}
     - {name: htop, install_options: ''}
     - {name: imgpkg, install_options: ''}
     - {name: jq, install_options: ''}
