@@ -23,7 +23,6 @@
     - {name: ag, install_options: ''}
     - {name: awscli, install_options: ''}
     - {name: coreutils, install_options: ''}
-    - {name: ctags, install_options: ''}
     - {name: dep, install_options: ''}
     - {name: direnv, install_options: ''}
     - {name: fasd, install_options: ''}
@@ -42,6 +41,7 @@
     - {name: lastpass-cli, install_options: ''}
     - {name: libgit2, install_options: ''}
     - {name: neovim, install_options: ''}
+    - {name: npm, install_options: ''}
     - {name: pstree, install_options: ''}
     - {name: python, install_options: ''}
     - {name: python-yq, install_options: ''}
