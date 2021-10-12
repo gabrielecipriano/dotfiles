@@ -9,6 +9,8 @@
 
   - file: path=~/bin state=directory mode=0755
 
+  - file: path=~/workspace state=directory mode=0755
+
   - name: get luan vimfiles
     git:
       repo: https://github.com/luan/vimfiles
