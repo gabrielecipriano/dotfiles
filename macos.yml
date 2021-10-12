@@ -68,6 +68,8 @@
   - name: install Homebrew casks
     homebrew_cask: name={{item}} install_options=appdir=/Applications
     with_items:
+    - firefox
+    - google-chrome
     - flycut
     - iterm2
     - jetbrains-toolbox
