@@ -2,15 +2,6 @@
 - hosts: all
   tags: [macos, linux]
   tasks:
-  - name: get bash-it
-    git:
-      repo: https://github.com/Bash-it/bash-it.git
-      dest: ~/.bash_it
-      force: true
-
-  - name: install bash-it
-    command: ~/.bash_it/install.sh --silent -f
-
   - name: get TPM
     git:
       repo: https://github.com/tmux-plugins/tpm
@@ -18,10 +9,13 @@
 
   - file: path=~/bin state=directory mode=0755
 
-  - name: install Luan's Neovim distribution
-    git:
-      repo: https://github.com/luan/nvim
-      dest: ~/.config/nvim
+  - name: installs oh-my-zsh
+    command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  - name: installs luan vimfiles
+    command: curl vimfiles.luan.sh/install | bash
+
+  - file: path=~/.source state=directory mode=0755
 
   - name: install python support for nvim
     command: pip3 install --user --upgrade pynvim
@@ -33,17 +27,16 @@
       state: link
       force: yes
     with_items:
-    - {target: ~/.bash_it/custom/brew.bash, src: "{{ansible_env.PWD}}/config/bash/brew.bash"}
-    - {target: ~/.bash_it/custom/env.bash, src: "{{ansible_env.PWD}}/config/bash/env.bash"}
-    - {target: ~/.bash_it/custom/git.bash, src: "{{ansible_env.PWD}}/config/bash/git.bash"}
-    - {target: ~/.bash_it/custom/profile.bash, src: "{{ansible_env.PWD}}/config/bash/profile.bash"}
-    - {target: ~/.bash_it/custom/terminal.bash, src: "{{ansible_env.PWD}}/config/bash/terminal.bash"}
+    - {target: ~/.source/envrc, src: "{{ansible_env.PWD}}/config/bash/env.bash"}
+    - {target: ~/.source/gitrc, src: "{{ansible_env.PWD}}/config/bash/git.bash"}
+    - {target: ~/.source/profilerc, src: "{{ansible_env.PWD}}/config/bash/profile.bash"}
     - {target: ~/.bash_it/themes/bobby/bobby.theme.bash, src: "{{ansible_env.PWD}}/config/bash/bobby-golang.theme.bash"}
     - {target: ~/.git-authors, src: "{{ansible_env.PWD}}/config/.git-authors"}
     - {target: ~/.gitconfig-shared, src: "{{ansible_env.PWD}}/config/.gitconfig-shared"}
     - {target: ~/.gitignore, src: "{{ansible_env.PWD}}/config/.gitignore"}
     - {target: ~/.ssh/rc, src: "{{ansible_env.PWD}}/executables/ssh.rc"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
+    - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zshrc"}
     - {target: ~/bin/load-personal-keys, src: "{{ansible_env.PWD}}/executables/load-personal-keys"}
     - {target: ~/bin/ensure-lpass-logged-in, src: "{{ansible_env.PWD}}/executables/ensure-lpass-logged-in"}
   - name: ~/.gitconfig
