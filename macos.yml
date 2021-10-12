@@ -22,6 +22,7 @@
     - {name: ack, install_options: ''}
     - {name: ag, install_options: ''}
     - {name: awscli, install_options: ''}
+    - {name: bat, install_options: ''}
     - {name: coreutils, install_options: ''}
     - {name: dep, install_options: ''}
     - {name: direnv, install_options: ''}
