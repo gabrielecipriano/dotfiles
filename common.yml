@@ -9,11 +9,13 @@
 
   - file: path=~/bin state=directory mode=0755
 
-  - name: installs oh-my-zsh
-    command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  - name: get luan vimfiles
+    git:
+      repo: https://github.com/luan/vimfiles
+      dest: ~/.luanvimfiles
 
   - name: installs luan vimfiles
-    command: curl vimfiles.luan.sh/install | bash
+    command: ~/.luanvimfiles/install
 
   - file: path=~/.source state=directory mode=0755
 
