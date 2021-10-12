@@ -9,7 +9,7 @@
       force: true
 
   - name: install bash-it
-    command: ~/.bash_it/install.sh --silent
+    command: ~/.bash_it/install.sh --silent -f
 
   - name: get TPM
     git:
@@ -46,9 +46,6 @@
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
     - {target: ~/bin/load-personal-keys, src: "{{ansible_env.PWD}}/executables/load-personal-keys"}
     - {target: ~/bin/ensure-lpass-logged-in, src: "{{ansible_env.PWD}}/executables/ensure-lpass-logged-in"}
-    - {target: ~/.config/nvim/user/before.vim, src: "{{ansible_env.PWD}}/config/.vimrc.local.before"}
-    - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/.vimrc.local.plugins"}
-    - {target: ~/.config/nvim/user/after.vim, src: "{{ansible_env.PWD}}/config/.vimrc.local"}
   - name: ~/.gitconfig
     blockinfile:
       path: ~/.gitconfig
@@ -56,6 +53,3 @@
       block: |
         [include]
           path = ~/.gitconfig-shared
-
-  - name: install counterfeiter
-    command: bash -c "go get github.com/maxbrunsfeld/counterfeiter"
