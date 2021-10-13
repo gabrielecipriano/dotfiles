@@ -19,8 +19,6 @@
   - name: installs luan vimfiles
     command: ~/.luanvimfiles/install
 
-  - file: path=~/.source state=directory mode=0755
-
   - name: install python support for nvim
     command: pip3 install --user --upgrade pynvim
 
