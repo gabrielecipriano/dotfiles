@@ -59,6 +59,7 @@
     - {name: shellcheck, install_options: ''}
     - {name: ssh-copy-id, install_options: ''}
     - {name: sshuttle, install_options: ''}
+    - {name: stern, install_options: ''}
     - {name: tealdeer, install_options: ''}
     - {name: terraform, install_options: ''}
     - {name: tig, install_options: ''}
