@@ -37,6 +37,7 @@
     - {name: imgpkg, install_options: ''}
     - {name: jq, install_options: ''}
     - {name: jsonpp, install_options: ''}
+    - {name: k9s, install_options: ''}
     - {name: kapp, install_options: ''}
     - {name: kbld, install_options: ''}
     - {name: kind, install_options: ''}
