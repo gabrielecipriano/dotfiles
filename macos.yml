@@ -9,7 +9,6 @@
     homebrew_tap: name={{item}}
     with_items:
     - homebrew/cask-fonts
-    - git-duet/tap
     - neovim/neovim
 
   - name: install Homebrew packages
