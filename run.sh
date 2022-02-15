@@ -20,6 +20,11 @@ install_ansible() {
   elif [[ "$platform" == "macos" ]]; then
     log "Installing/upgrading Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    log "Installing/upgrading OhMyZSH"
+    /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    log "Installing Ansible"
     brew install ansible
   fi
 }
