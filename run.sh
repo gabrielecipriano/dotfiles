@@ -21,8 +21,7 @@ install_ansible() {
     log "Installing/upgrading Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    log "Installing/upgrading OhMyZSH"
-    /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/gcipriano/.bashrc
 
     log "Installing Ansible"
     brew install ansible
