@@ -51,7 +51,6 @@
     - {name: tig, install_options: ''}
     - {name: tmux, install_options: ''}
     - {name: tree, install_options: ''}
-    - {name: vendir, install_options: ''}
     - {name: vim, install_options: ''}
     - {name: watch, install_options: ''}
     - {name: wget, install_options: ''}
