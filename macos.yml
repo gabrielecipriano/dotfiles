@@ -68,8 +68,6 @@
     - google-cloud-sdk
     - iterm2
     - shiftit
-    - vagrant
-    - virtualbox
     - spotify
 
   - name: install neovim pip3 package
