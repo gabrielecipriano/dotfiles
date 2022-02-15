@@ -30,13 +30,11 @@
       force: yes
     with_items:
     - {target: ~/.source, src: "{{ansible_env.PWD}}/config/source"}
-    - {target: ~/.git-authors, src: "{{ansible_env.PWD}}/config/.git-authors"}
     - {target: ~/.gitconfig-shared, src: "{{ansible_env.PWD}}/config/.gitconfig-shared"}
     - {target: ~/.gitignore, src: "{{ansible_env.PWD}}/config/.gitignore"}
     - {target: ~/.ssh/rc, src: "{{ansible_env.PWD}}/executables/ssh.rc"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
     - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zshrc"}
-    - {target: ~/.git-templates, src: "{{ansible_env.PWD}}/config/git-templates"}
     - {target: ~/bin/load-personal-keys, src: "{{ansible_env.PWD}}/executables/load-personal-keys"}
     - {target: ~/bin/ensure-lpass-logged-in, src: "{{ansible_env.PWD}}/executables/ensure-lpass-logged-in"}
   - name: ~/.gitconfig
