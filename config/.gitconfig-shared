@@ -21,18 +21,10 @@
 [commit]
     verbose = true
     message = ~/.gitmessage
-[url "git@github.com:"]
-    insteadOf = https://github.com/
-[url "git@gitlab.eng.vmware.com:"]
-	insteadOf = https://gitlab.eng.vmware.com/
-[http "https://gopkg.in"]
-    followRedirects = true
-[init]
-    templatedir = ~/.git-templates
 [hooks "confirm"]
     match = FIt(
     match = FWhen(
     match = FContext(
     match = FDescribe(
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
